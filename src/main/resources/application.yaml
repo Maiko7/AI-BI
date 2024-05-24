@@ -1,0 +1,25 @@
+spring:
+  application:
+    name: AI-BI
+  profiles:
+    active: dev
+  # Springfox使用的路径匹配是基于AntPathMatcher的，而Spring Boot 2.6.X及以上使用的是PathPatternMatcher
+  # 所以这里要把SpringBoot2.6.X及以上使用的PathPatternMatcher改成AntPathMatcher
+  mvc:
+    pathmatch:
+      matching-strategy: ant_path_matcher
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/maiko?useUnicode=true&characterEncoding=utf-8&serverTimezone=Asia/Shanghai
+    username: root
+    password: 123456
+# 应用服务 WEB 访问端口
+server:
+  port: 8080
+  servlet:
+    context-path: /api
+# 开启配置增强功能（比如添加接口作者，没有这个配置增强就显示不出来）
+knife4j:
+  enable: true
+
+
