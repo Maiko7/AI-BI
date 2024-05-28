@@ -7,37 +7,42 @@ import java.io.Serializable;
 import java.util.Date;
 
 /**
- * 用户表
+ * 用户
  * @TableName user
  */
 @TableName(value ="user")
 @Data
 public class User implements Serializable {
     /**
-     * 主键
+     * id
      */
-    @TableId(type = IdType.AUTO)
+    @TableId(type = IdType.ASSIGN_ID)
     private Long id;
 
     /**
-     * 昵称
+     * 用户昵称
      */
     private String username;
 
     /**
-     * 登陆账号
+     * 账号
      */
     private String userAccount;
 
     /**
-     * 密码
+     * 用户头像
      */
-    private String userPassword;
+    private String avatarUrl;
 
     /**
      * 性别
      */
     private Integer gender;
+
+    /**
+     * 密码
+     */
+    private String userPassword;
 
     /**
      * 电话
@@ -50,25 +55,9 @@ public class User implements Serializable {
     private String email;
 
     /**
-     * 头像
+     * 状态 0 - 正常
      */
-    private String avatarUrl;
-
-    /**
-     * 是否删除(0-未删, 1-已删)
-     */
-    @TableLogic
-    private Integer isDeleted;
-
-    /**
-     * 用户状态（0-正常, 1-异常）
-     */
-    private String userStatus;
-
-    /**
-     * 用户角色(0-普通用户，1-管理员)
-     */
-    private Integer userRole;
+    private Integer userStatus;
 
     /**
      * 创建时间
@@ -76,9 +65,20 @@ public class User implements Serializable {
     private Date createTime;
 
     /**
-     * 更新时间
+     * 
      */
     private Date updateTime;
+
+    /**
+     * 是否删除
+     */
+    @TableLogic
+    private Integer isDelete;
+
+    /**
+     * 用户角色 0 - 普通用户 1 - 管理员
+     */
+    private Integer userRole;
 
     @TableField(exist = false)
     private static final long serialVersionUID = 1L;

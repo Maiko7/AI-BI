@@ -1,5 +1,7 @@
 package com.maiko7.aibi.model.vo.uservo;
 
+import lombok.Data;
+
 import java.io.Serializable;
 import java.util.Date;
 
@@ -7,6 +9,7 @@ import java.util.Date;
  * @author: Maiko7
  * @create: 2024-05-24-11:21
  */
+@Data
 public class LoginUserVO implements Serializable {
 
     private static final long serialVersionUID = 1966044533599169139L;

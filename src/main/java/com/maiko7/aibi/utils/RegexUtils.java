@@ -41,6 +41,17 @@ public class RegexUtils {
      * @return
      */
     public static boolean isAccountInvalid(String account) {
+//        if (StrUtil.isBlank(account)) {
+//            return true;
+//        }
+//        /**
+//         * 这是String的matches()方法，不是正则表达式Matcher的matches()方法
+//         * matches用于判断 str 是否符合指定的正则表达式 regex。它返回一个布尔值，
+//         * 如果字符串 str 符合正则表达式 regex，则返回 true，否则返回 false。
+//         * 他这里是取反，也就是不符合返回false但是取反就是true了
+//         */
+//        System.out.println(account.matches(RegexPatterns.ACCOUNT_REGEX));
+//        return account.matches(RegexPatterns.ACCOUNT_REGEX);
         return mismath(account, RegexPatterns.ACCOUNT_REGEX);
     }
 
@@ -72,6 +83,7 @@ public class RegexUtils {
          * 如果字符串 str 符合正则表达式 regex，则返回 true，否则返回 false。
          * 他这里是取反，也就是不符合返回false但是取反就是true了
          */
+        System.out.println(!str.matches(regex));
         return !str.matches(regex);
     }
 }

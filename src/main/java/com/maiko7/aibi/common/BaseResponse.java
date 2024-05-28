@@ -1,5 +1,7 @@
 package com.maiko7.aibi.common;
 
+import lombok.Data;
+
 import java.io.Serializable;
 
 /**
@@ -7,6 +9,7 @@ import java.io.Serializable;
  * @author: Maiko7
  * @create: 2024-05-23-20:11
  */
+@Data
 public class BaseResponse<T> implements Serializable {
 
     private static final long serialVersionUID = -5018221131954611888L;

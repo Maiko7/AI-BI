@@ -67,8 +67,8 @@ class RegexPatternsTest {
 
     @Test
     void testRegexAccount() {
-//        String account = "maiko7";
-        String account = "maiko7-";
+        String account = "maiko7";
+//        String account = "maiko7-";
         Matcher matcher = Pattern.compile(RegexPatterns.ACCOUNT_REGEX).matcher(account);
         if (!matcher.matches()) {
             System.out.println("账号正则正确");

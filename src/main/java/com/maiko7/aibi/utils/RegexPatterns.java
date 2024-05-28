@@ -70,7 +70,8 @@ public abstract class RegexPatterns {
      *
      * A 1 a - _ 都是符合的
      */
-    public static final String ACCOUNT_REGEX = "[`~!@#$%^&*()+=|{}':;',\\\\[\\\\].<>/?~！@#￥%……&*（）——+|{}【】‘；：”“’。，、？]";
+//    public static final String ACCOUNT_REGEX = "[`~!@#$%^&*()+=|{}':;',\\\\[\\\\].<>/?~！@#￥%……&*（）——+|{}【】‘；：”“’。，、？]";
+
 
     /**
      * 账号正则
@@ -78,5 +79,5 @@ public abstract class RegexPatterns {
      * [a-zA-Z0-9_-]+ 表示一个或多个字母、数字、下划线或连字符。
      * $表示字符串的结束。
      */
-//    public static final String ACCOUNT_REGEX = "^[a-zA-Z0-9_-]+$";
+    public static final String ACCOUNT_REGEX = "^[a-zA-Z0-9_-]+$";
 }

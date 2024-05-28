@@ -3,11 +3,21 @@ spring:
     name: AI-BI
   profiles:
     active: dev
+  session:
+    # 你配置了这个你就要开启redis的配置
+    store-type: redis
+    timeout: 24h
   # Springfox使用的路径匹配是基于AntPathMatcher的，而Spring Boot 2.6.X及以上使用的是PathPatternMatcher
   # 所以这里要把SpringBoot2.6.X及以上使用的PathPatternMatcher改成AntPathMatcher
   mvc:
     pathmatch:
       matching-strategy: ant_path_matcher
+  redis:
+    host: localhost
+    database: 0
+    port: 6379
+    # 客户端与 Redis 服务器之间的连接超时时间。10000 毫秒（10 秒）。如果在 10 秒内无法建立连接，客户端将会抛出超时异常。
+    timeout: 10000
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
     url: jdbc:mysql://localhost:3306/maiko?useUnicode=true&characterEncoding=utf-8&serverTimezone=Asia/Shanghai
@@ -21,5 +31,11 @@ server:
 # 开启配置增强功能（比如添加接口作者，没有这个配置增强就显示不出来）
 knife4j:
   enable: true
+
+mybatis-plus:
+  configuration:
+    map-underscore-to-camel-case: false
+    # 将日志输出到标准输出（控制台）
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
 
 
